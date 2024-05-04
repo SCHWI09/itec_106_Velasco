@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="calculator.css">
+  		<title>Calculator</title>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="calculator">
+    <input type="text" id="answerDisplay" readonly>
+    <input type="text" id="display" readonly>
+    <div id="keys">
 
+      <button onclick="clearDisplay()" class="double">C</button>
+      <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
+      <button onclick="appendToDisplay('*')" class="operator-btn">*</button>
+      <button onclick="appendToDisplay('7')">7</button>
+	  <button onclick="appendToDisplay('8')">8</button>
+		<button onclick="appendToDisplay('9')">9</button>
+		<button onclick="appendToDisplay('-')" class="operator-btn">-</button>
+		
+		<button onclick="appendToDisplay('4')">4</button>
+		<button onclick="appendToDisplay('5')">5</button>
+		<button onclick="appendToDisplay('6')">6</button>
+		<button onclick="appendToDisplay('+')" id="vert" class="operator-btn">+</button>
+		<button onclick="appendToDisplay('1')">1</button>
+		<button onclick="appendToDisplay('2')">2</button>
+		<button onclick="appendToDisplay('3')">3</button>
+		
+		<button onclick="appendToDisplay('0')" class="doub">0</button>
+		<button onclick="appendToDisplay('.')">.</button>
+		<button onclick="calculate()" class="operator-btn">=</button>
+	</div>
+</div>
+	</div>
+	</div>
+	<script>
+		function appendToDisplay(character) {
+      	const display = document.getElementById('display').value += character;
+       const answerDisplay = document.getElementById('answerDisplay');
+
+    }
+
+    function clearDisplay() {
+      const display = document.getElementById('display');
+       const answerDisplay = document.getElementById('answerDisplay');
+
+       display.value = '';
+       answerDisplay.value = '';
+    }
+
+    function calculate() {
+      try {
+        var result = eval(document.getElementById('display').value);
+        document.getElementById('answerDisplay').value = result;
+      } catch (error) {
+        document.getElementById('answerDisplay').value = 'Error';
+
+      }
+    }
+	</script>
+</body>
+</html>
